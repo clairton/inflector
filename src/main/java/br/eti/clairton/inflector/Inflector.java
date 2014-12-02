@@ -23,23 +23,23 @@ public class Inflector {
 
 	private final Collection<Rule> plural = new ArrayList<>();
 
-	private static final ThreadLocal<Map<Locale, Inflector>> INFLECTORS = new ThreadLocal<Map<Locale, Inflector>>() {
-		private final Map<Locale, Inflector> map = new HashMap<>();
+	private static final ThreadLocal<Map<String, Inflector>> INFLECTORS = new ThreadLocal<Map<String, Inflector>>() {
+		private final Map<String, Inflector> map = new HashMap<>();
 		{
-			final Inflector infletor = new Inflector();
-			infletor.addPlural("ção$", "ções");
-			infletor.addPlural("cao$", "coes");
-			infletor.addPlural("z$", "zes");
-			infletor.addPlural("$", "s");
-			infletor.addSingular("ções$", "ção");
-			infletor.addSingular("coes$", "cao");
-			infletor.addSingular("zes$", "z");
-			infletor.addSingular("s$", "");
-			map.put(Locale.pt_BR, infletor);
+			final Inflector inflector = new Inflector();
+			inflector.addPlural("ção$", "ções");
+			inflector.addPlural("cao$", "coes");
+			inflector.addPlural("z$", "zes");
+			inflector.addPlural("$", "s");
+			inflector.addSingular("ções$", "ção");
+			inflector.addSingular("coes$", "cao");
+			inflector.addSingular("zes$", "z");
+			inflector.addSingular("s$", "");
+			map.put(Locale.pt_BR, inflector);
 		}
 
 		@Override
-		public Map<Locale, Inflector> get() {
+		public Map<String, Inflector> get() {
 			return map;
 		}
 	};
@@ -117,13 +117,17 @@ public class Inflector {
 		}
 	}
 
-	public static Inflector getForLocale(final Locale language) {
+	public static void addLocale(final String locale, Inflector inflector) {
+		INFLECTORS.get().put(locale, inflector);
+	}
+
+	public static Inflector getForLocale(final String locale) {
 		final Inflector inflector;
-		if (INFLECTORS.get().containsKey(language)) {
-			inflector = INFLECTORS.get().get(language);
+		if (INFLECTORS.get().containsKey(locale)) {
+			inflector = INFLECTORS.get().get(locale);
 		} else {
 			inflector = new Inflector();
-			INFLECTORS.get().put(language, inflector);
+			INFLECTORS.get().put(locale, inflector);
 		}
 		return inflector;
 	}

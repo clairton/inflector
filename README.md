@@ -16,11 +16,23 @@
 		} else {
 			language = Locale.pt_BR;
 		}
-		reutrn Inflector.getForLocale(language);
+		Inflector inflector =  Inflector.getForLocale(language);
+		//adicionando novas transformações
+		inflector.addPlural("ção$", "ções");
+		inflector.addSingular("ções$", "ção");
+		return inflector;
 	}
 ```
 
 	Injetando no bean.
 ```	
 	@Inject @Language Inflector inflector
+```
+
+	Adicionando novos idiomas.
+```	
+	final Inflector inflector = new Inflector();
+	inflector.addPlural("ção$", "ções");
+	inflector.addSingular("ções$", "ção");
+	addLocale("en", inflector);
 ```

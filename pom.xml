@@ -66,6 +66,15 @@
 	</build>
 
 	<distributionManagement>
+		<!-- Necessita adicionar em ~/.m2/settings.xml
+			<servers>
+				<server>
+					<id>github</id>
+					<username>clairton</username>
+					<password>av.ar.823&amp;</password>
+				</server>
+			</servers>
+		 -->
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>

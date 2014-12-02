@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PARAMETER, ElementType.METHOD, ElementType.FIELD })
 public @interface Language {
-	Locale value() default Locale.pt_BR;
+	String value() default Locale.pt_BR;
 }
