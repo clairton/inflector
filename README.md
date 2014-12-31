@@ -1,8 +1,7 @@
 # Transforma palavras no singular para o plural e vice-versa
-	Segue alguma informações interessantes sobre o projeto.
 ```
 	Inflector inflector = Inflector.getForLocale(Locale.pt_BR)
-	inflector.pluralize("coração") > "corações";
+	inflector.pluralize("coração") >>>> "corações";
 ```
 	
 # Usando no cdi
@@ -35,4 +34,19 @@
 	inflector.addPlural("ção$", "ções");
 	inflector.addSingular("ções$", "ção");
 	addLocale("en", inflector);
+```	
+	Download através do maven, dependência:
+```
+	<dependeny>
+		<groupId>br.eti.clairton</groupId>
+		<artifactId>inflector</artifactId>
+		<version>0.1.0</version>
+	</dependency>
+```
+	E adicionar o repositório
+```
+	<repository>
+		<id>mvn-repo-releases</id>
+		<url>https://raw.github.com/clairton/mvn-repo.git/releases</url>
+	</repository>
 ```
