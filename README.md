@@ -47,6 +47,6 @@
 ```
 	<repository>
 		<id>mvn-repo-releases</id>
-		<url>https://raw.github.com/clairton/mvn-repo.git/releases</url>
+		<url>https://raw.github.com/clairton/mvn-repo/releases</url>
 	</repository>
 ```
