@@ -15,16 +15,16 @@ import java.util.regex.Pattern;
  * @author Clairton Rodrigo Heinzen<clairton.rodrigo@gmail.com>
  */
 public class Inflector {
-	private final Collection<String> uncountable = new ArrayList<>();
+	private final Collection<String> uncountable = new ArrayList<String>();
 
-	private final Collection<Rule> singular = new ArrayList<>();
+	private final Collection<Rule> singular = new ArrayList<Rule>();
 
-	private final Map<String, String> irregular = new HashMap<>();
+	private final Map<String, String> irregular = new HashMap<String, String>();
 
-	private final Collection<Rule> plural = new ArrayList<>();
+	private final Collection<Rule> plural = new ArrayList<Rule>();
 
 	private static final ThreadLocal<Map<String, Inflector>> INFLECTORS = new ThreadLocal<Map<String, Inflector>>() {
-		private final Map<String, Inflector> map = new HashMap<>();
+		private final Map<String, Inflector> map = new HashMap<String, Inflector>();
 		{
 			final Inflector inflector = new Inflector();
 			inflector.addPlural("ção$", "ções");
