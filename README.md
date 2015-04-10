@@ -1,4 +1,5 @@
-# Transforma palavras no singular para o plural e vice-versa
+#inflector [![Build Status](https://travis-ci.org/clairton/inflector.svg?branch=master)](https://travis-ci.org/clairton/inflector)
+Transforma palavras no singular para o plural e vice-versa
 ```
 	Inflector inflector = Inflector.getForLocale(Locale.pt_BR)
 	inflector.pluralize("coração") >>>> "corações";
