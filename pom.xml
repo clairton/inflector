@@ -4,10 +4,6 @@
 	<groupId>br.eti.clairton</groupId>
 	<artifactId>inflector</artifactId>
 	<version>0.0.1</version>
-	<properties>
-		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
-		<github.global.server>github</github.global.server>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -69,7 +65,7 @@
 			<extension>
 				<groupId>ar.com.synergian</groupId>
 				<artifactId>wagon-git</artifactId>
-				<version>0.2.2</version>
+				<version>0.2.5</version>
 			</extension>
 		</extensions>
 	</build>
