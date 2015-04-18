@@ -1,4 +1,4 @@
-#inflector [![Build Status](https://travis-ci.org/clairton/inflector.svg?branch=master)](https://travis-ci.org/clairton/inflector)
+#inflector [![Build Status](https://drone.io/github.com/clairton/inflector/status.png)](https://drone.io/github.com/clairton/inflector/latest)
 Transforma palavras no singular para o plural e vice-versa
 ```java
 Inflector inflector = Inflector.getForLocale(Locale.pt_BR)
