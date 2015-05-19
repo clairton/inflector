@@ -13,12 +13,14 @@ public class InflectorTest {
 		assertEquals("operacao", inflector.singularize("operacoes"));
 		assertEquals("recurso", inflector.singularize("recursos"));
 		assertEquals("cruz", inflector.singularize("cruzes"));
+		assertEquals("seletor", inflector.singularize("seletores"));
 	}
 
 	@Test
 	public void testPluralize() {
 		assertEquals("operacoes", inflector.pluralize("operacao"));
 		assertEquals("cruzes", inflector.pluralize("cruz"));
+		assertEquals("seletores", inflector.pluralize("seletor"));
 	}
 
 	@Test

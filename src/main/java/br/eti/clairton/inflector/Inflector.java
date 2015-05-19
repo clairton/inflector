@@ -27,6 +27,7 @@ public class Inflector {
 		private final Map<String, Inflector> map = new HashMap<String, Inflector>();
 		{
 			final Inflector inflector = new Inflector();
+			inflector.addPlural("r$", "res");
 			inflector.addPlural("ção$", "ções");
 			inflector.addPlural("são$", "sões");
 			inflector.addPlural("cao$", "coes");
@@ -34,6 +35,7 @@ public class Inflector {
 			inflector.addPlural("l$", "is");
 			inflector.addPlural("z$", "zes");
 			inflector.addPlural("$", "s");
+			inflector.addSingular("res$", "r");
 			inflector.addSingular("ções$", "ção");
 			inflector.addSingular("coes$", "cao");
 			inflector.addSingular("sões$", "são");
