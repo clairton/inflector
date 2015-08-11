@@ -34,6 +34,7 @@ public class Inflector {
 			inflector.addPlural("sao$", "soes");
 			inflector.addPlural("l$", "is");
 			inflector.addPlural("z$", "zes");
+			inflector.addPlural("m$", "ns");
 			inflector.addPlural("$", "s");
 			inflector.addSingular("res$", "r");
 			inflector.addSingular("ções$", "ção");
@@ -42,6 +43,7 @@ public class Inflector {
 			inflector.addSingular("soes$", "sao");
 			inflector.addSingular("is$", "l");
 			inflector.addSingular("zes$", "z");
+			inflector.addSingular("ns$", "m");
 			inflector.addSingular("s$", "");
 			map.put(Locale.pt_BR, inflector);
 		}
