@@ -72,16 +72,31 @@ public class Inflector {
 		return orig;
 	}
 	
-	public String underscore(final String orig){
-		final Pattern pattern = Pattern.compile("^$[A-Z]");
-		final Matcher matcher = pattern.matcher(orig);
+
+	public String replaceUpperedBy(final String orig, final String to){
+		final String uncapitalized = uncapitalize(orig);
+		final Pattern pattern = Pattern.compile("[A-Z]");
+		final Matcher matcher = pattern.matcher(uncapitalized);
 		final StringBuilder builder = new StringBuilder();
+		Integer start = 0;
 		while (matcher.find()) {
-			final Integer start = matcher.start();
-			final Integer end = matcher.end();
-			builder.append(orig.substring(start - 1, endIndex))
+			final Integer end = matcher.end() - 1;
+			final String part = uncapitalized.substring(start, end);
+			builder.append(part);
+			builder.append(to);
+			builder.append(Character.toLowerCase(uncapitalized.charAt(end)));
+			start = matcher.end();
 		}		
-		return uncapitalize(builder.toString());
+		builder.append(uncapitalized.substring(start));
+		return builder.toString();
+	}
+	
+	public String dasherize(final String orig){
+		return replaceUpperedBy(orig, "-");
+	}
+	
+	public String underscore(final String orig){
+		return replaceUpperedBy(orig, "_");
 	}
 
 	public String pluralize(final String orig) {

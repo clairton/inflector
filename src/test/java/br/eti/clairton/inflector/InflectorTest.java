@@ -17,6 +17,20 @@ public class InflectorTest {
 	}
 
 	@Test
+	public void testUnderscore() {
+		assertEquals("operacao_lava_jato", inflector.underscore("OperacaoLavaJato"));
+		assertEquals("operacao_lava_jato", inflector.underscore("operacaoLavaJato"));
+		assertEquals("operacao_lava_jat_o", inflector.underscore("operacaoLavaJatO"));
+	}
+	
+	@Test
+	public void testDasherize() {
+		assertEquals("operacao-lava-jato", inflector.dasherize("OperacaoLavaJato"));
+		assertEquals("operacao-lava-jato", inflector.dasherize("operacaoLavaJato"));
+		assertEquals("operacao-lava-jat-o", inflector.dasherize("operacaoLavaJatO"));
+	}
+
+	@Test
 	public void testPluralize() {
 		assertEquals("operacoes", inflector.pluralize("operacao"));
 		assertEquals("cruzes", inflector.pluralize("cruz"));
