@@ -71,6 +71,18 @@ public class Inflector {
 		}
 		return orig;
 	}
+	
+	public String underscore(final String orig){
+		final Pattern pattern = Pattern.compile("^$[A-Z]");
+		final Matcher matcher = pattern.matcher(orig);
+		final StringBuilder builder = new StringBuilder();
+		while (matcher.find()) {
+			final Integer start = matcher.start();
+			final Integer end = matcher.end();
+			builder.append(orig.substring(start - 1, endIndex))
+		}		
+		return uncapitalize(builder.toString());
+	}
 
 	public String pluralize(final String orig) {
 		if (uncountable.contains(orig)) {
