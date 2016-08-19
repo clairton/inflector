@@ -28,19 +28,15 @@ public class Inflector {
 		{
 			final Inflector inflector = new Inflector();
 			inflector.addPlural("r$", "res");
-			inflector.addPlural("ção$", "ções");
-			inflector.addPlural("são$", "sões");
-			inflector.addPlural("cao$", "coes");
-			inflector.addPlural("sao$", "soes");
+			inflector.addPlural("ão$", "ões");
+			inflector.addPlural("ao$", "oes");
 			inflector.addPlural("l$", "is");
 			inflector.addPlural("z$", "zes");
 			inflector.addPlural("m$", "ns");
 			inflector.addPlural("$", "s");
 			inflector.addSingular("res$", "r");
-			inflector.addSingular("ções$", "ção");
-			inflector.addSingular("coes$", "cao");
-			inflector.addSingular("sões$", "são");
-			inflector.addSingular("soes$", "sao");
+			inflector.addSingular("ões$", "ão");
+			inflector.addSingular("oes$", "ao");
 			inflector.addSingular("is$", "l");
 			inflector.addSingular("zes$", "z");
 			inflector.addSingular("ns$", "m");
