@@ -4,6 +4,34 @@
 	<groupId>br.eti.clairton</groupId>
 	<artifactId>inflector</artifactId>
 	<version>1.1.0</version>
+
+	<name>Inflector for java</name>
+	<description>Inflector words</description>
+	<url>https://github.com/clairton/inflector</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git@github.com:clairton/inflector.git</connection>
+		<developerConnection>scm:git:git@github.com:clairton/inf.git</developerConnection>
+		<url>git@github.com:clairton/inflector.git</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Clairton Rodrigo Heinzen</name>
+			<email>clairton.rodrigo@gmail.com</email>
+			<organization>Clairton</organization>
+			<organizationUrl>http://clairton.eti.br/</organizationUrl>
+		</developer>
+	</developers>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -43,6 +71,9 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
 			</plugin>
 			<plugin>
 				<!-- explicitly define maven-deploy-plugin after other to force exec 
@@ -56,6 +87,19 @@
 						<phase>deploy</phase>
 						<goals>
 							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
 						</goals>
 					</execution>
 				</executions>
