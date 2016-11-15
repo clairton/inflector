@@ -17,12 +17,6 @@
 		</license>
 	</licenses>
 
-	<scm>
-		<connection>scm:git:git@github.com:clairton/inflector.git</connection>
-		<developerConnection>scm:git:git@github.com:clairton/inf.git</developerConnection>
-		<url>git@github.com:clairton/inflector.git</url>
-	</scm>
-
 	<developers>
 		<developer>
 			<name>Clairton Rodrigo Heinzen</name>
@@ -31,6 +25,12 @@
 			<organizationUrl>http://clairton.eti.br/</organizationUrl>
 		</developer>
 	</developers>
+
+	<scm>
+		<connection>scm:git:git@github.com:clairton/inflector.git</connection>
+		<developerConnection>scm:git:git@github.com:clairton/inf.git</developerConnection>
+		<url>git@github.com:clairton/inflector.git</url>
+	</scm>
 
 	<dependencies>
 		<dependency>
