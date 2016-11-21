@@ -30,6 +30,7 @@ public class Inflector {
 			inflector.addPlural("r$", "res");
 			inflector.addPlural("ão$", "ões");
 			inflector.addPlural("ao$", "oes");
+			inflector.addPlural("il$", "eis");
 			inflector.addPlural("l$", "is");
 			inflector.addPlural("z$", "zes");
 			inflector.addPlural("m$", "ns");
@@ -37,6 +38,7 @@ public class Inflector {
 			inflector.addSingular("res$", "r");
 			inflector.addSingular("ões$", "ão");
 			inflector.addSingular("oes$", "ao");
+			inflector.addSingular("eis$", "il");
 			inflector.addSingular("is$", "l");
 			inflector.addSingular("zes$", "z");
 			inflector.addSingular("ns$", "m");

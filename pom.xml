@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.eti.clairton</groupId>
 	<artifactId>inflector</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 
 	<name>Inflector for java</name>
 	<description>Inflector words</description>
