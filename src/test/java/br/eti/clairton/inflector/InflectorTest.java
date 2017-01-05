@@ -15,6 +15,7 @@ public class InflectorTest {
 		assertEquals("cruz", inflector.singularize("cruzes"));
 		assertEquals("seletor", inflector.singularize("seletores"));
 		assertEquals("contabil", inflector.singularize("contabeis"));
+		assertEquals("civil", inflector.singularize("civis"));
 	}
 
 	@Test
@@ -37,6 +38,7 @@ public class InflectorTest {
 		assertEquals("cruzes", inflector.pluralize("cruz"));
 		assertEquals("seletores", inflector.pluralize("seletor"));
 		assertEquals("contabeis", inflector.pluralize("contabil"));
+		assertEquals("civis", inflector.pluralize("civil"));
 	}
 
 	@Test

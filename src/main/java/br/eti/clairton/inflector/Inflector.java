@@ -1,5 +1,9 @@
 package br.eti.clairton.inflector;
 
+import static br.eti.clairton.inflector.Locale.pt_BR;
+import static java.util.regex.Pattern.CASE_INSENSITIVE;
+import static java.util.regex.Pattern.compile;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -30,6 +34,7 @@ public class Inflector {
 			inflector.addPlural("r$", "res");
 			inflector.addPlural("ão$", "ões");
 			inflector.addPlural("ao$", "oes");
+			inflector.addPlural("vil$", "vis");
 			inflector.addPlural("il$", "eis");
 			inflector.addPlural("l$", "is");
 			inflector.addPlural("z$", "zes");
@@ -39,11 +44,12 @@ public class Inflector {
 			inflector.addSingular("ões$", "ão");
 			inflector.addSingular("oes$", "ao");
 			inflector.addSingular("eis$", "il");
+			inflector.addSingular("vis$", "vil");
 			inflector.addSingular("is$", "l");
 			inflector.addSingular("zes$", "z");
 			inflector.addSingular("ns$", "m");
 			inflector.addSingular("s$", "");
-			map.put(Locale.pt_BR, inflector);
+			map.put(pt_BR, inflector);
 		}
 
 		@Override
@@ -147,7 +153,7 @@ public class Inflector {
 		private final String replacement;
 
 		public Rule(final String regex, final String replacement) {
-			this.regex = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+			this.regex = compile(regex, CASE_INSENSITIVE);
 			this.replacement = replacement;
 		}
 	}
