@@ -31,6 +31,12 @@ public class Inflector {
 		private final Map<String, Inflector> map = new HashMap<String, Inflector>();
 		{
 			final Inflector inflector = new Inflector();
+			
+			inflector.addSingular("^([a-zA-z]*)ais$/i", "\1al");
+			inflector.addSingular("/^([a-zA-z]*)eis$/i", "\1el");
+			inflector.addSingular("/^([a-zA-z]*)ois$/i", "\1ol");
+			inflector.addSingular("/^([a-zA-z]*)uis$/i", "\1ul");
+			
 			inflector.addPlural("r$", "res");
 			inflector.addPlural("ão$", "ões");
 			inflector.addPlural("ao$", "oes");
@@ -43,7 +49,7 @@ public class Inflector {
 			inflector.addSingular("res$", "r");
 			inflector.addSingular("ões$", "ão");
 			inflector.addSingular("oes$", "ao");
-			inflector.addSingular("eis$", "il");
+			inflector.addSingular("beis$", "bil");
 			inflector.addSingular("vis$", "vil");
 			inflector.addSingular("is$", "l");
 			inflector.addSingular("zes$", "z");
